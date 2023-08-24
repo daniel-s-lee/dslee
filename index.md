@@ -4,11 +4,13 @@ title: Student Blog
 ---
 
 
-## Build you Home Page here 
-This is about your journey.
+## Build your Home Page here 
+This is about your journey. 
+Dates:
+8/21:
 
 ## Overview of Hacks, Study and Tangibles
-Blogging in GitHub pages is a way to learn and code at the same time. 
+Blogging on GitHub pages is a way to learn and code at the same time.  
 
 
 - Plans, Lists, [Scrum Boards](https://clickup.com/blog/scrum-board/) help you to track key events, show progress and record time.  Effort is a big part of your class grade.  Show plans and time spent!
