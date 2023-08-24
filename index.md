@@ -10,9 +10,6 @@ It works really well
 ## Freeform Picture
 ![pic](https://cdn.discordapp.com/attachments/1144148342696316939/1144162740605296640/Untitled.png)
 
-
-[![Watch the video]()](https://youtu.be/vt5fpE0bzSY)
-
-
-https://github.com/daniel-s-lee/dslee/assets/142445258/11eb1a19-87f9-418f-b599-4a6c97889eae
+## Random video
+[![Watch the video](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg)](https://www.youtube.com/watch?v=tPEE9ZwTmy0)
 
