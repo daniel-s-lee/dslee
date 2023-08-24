@@ -5,7 +5,7 @@ title: Student Blog
 
 
 ## Build your Home Page here 
-This is about your journey. 
+This is about your journey. Hi 
 
 ## Overview of Hacks, Study and Tangibles
 Blogging on GitHub pages is a way to learn and code at the same time.  
