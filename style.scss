@@ -1,0 +1,237 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+// STYLING PREFERNCES for SITE
+// mixin used as a template for buttons
+  @mixin button {
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    background-color: #21807c;
+    border: 3px solid black;
+    font-size: 1.5em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    grid-column: span 1;
+    grid-row: span 1;
+
+    // Creates smooth animation effect
+    transition: all 0.5s; 
+  }
+
+  /* define class for redifined button */
+  .button {
+    @include button;
+  }
+
+   /* darkens the background color on hover to create a selecting effect */
+  .button:hover {
+    background-color: #373737;
+  }
+
+  /* "row style" is flexible size and aligns pictures in center */
+  .row {
+    align-items: center;
+    display: flex;
+  }
+
+  /* "column style" is one-third of the width with padding */
+  .column {
+    flex: 16.66%;
+    padding: 3px;
+  }
+  
+// STYLING FOR CALCULATOR
+  /* class to create the calculator's container; uses CSS grid dsiplay to partition off buttons */
+  .calculator-container { 
+    width: 90vw; /* this width and height is specified for mobile devices by default */
+    height: 80vh;
+    margin: 0 auto;
+  
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* fr is a special unit; learn more here: https://css-tricks.com/introduction-fr-css-unit/  */
+    grid-template-rows: 0.5fr repeat(4, 1fr);
+    gap: 10px 10px;
+  }
+  
+  @media (min-width: 600px) { 
+    .calculator-container {
+        width: 40vw;
+        height: 80vh;
+    }
+  }
+
+  /* styling for the calculator number button */
+  .calculator-number {
+    @extend .button;
+  }
+
+  /* styling for the calculator operation button */
+  .calculator-operation {
+    @extend .button;
+  }
+  
+  /* styling for the calculator clear button */
+  .calculator-clear {
+    @extend .button;
+    background-color: #e68b1c;
+  }
+  
+  /* styling for the calculator equals button */
+  .calculator-equals {
+    @extend .button;
+    background-color: #e70f0f;
+  }
+
+
+  /* Bordered form */
+form {
+  border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+
+.center-div {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+#login-error-msg-holder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+#login-error-msg {
+  width: 23%;
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #8a0000;
+  border: 1px solid #8a0000;
+  background-color: #e58f8f;
+  opacity: 0;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
