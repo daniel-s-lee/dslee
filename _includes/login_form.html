@@ -74,17 +74,17 @@
 </script>
 
 <script>
-  const loginForm = document.getElementById("login-form");
+    const loginForm = document.getElementById("login-form");
     const loginButton = document.getElementById("login-form-submit");
     const loginErrorMsg = document.getElementById("login-error-msg");
 
-    loginButton.addEventListener("click", (e) => {
+    loginButton.addEventListener("click", async(e) => {
         e.preventDefault();
         const username = loginForm.username.value;
         const password = loginForm.password.value;
 
-        loginUser(username, password)
-    })
+        loginUser(username, password);
+    });
 
     async function loginUser(username, password) {
       const response = await fetch('http://127.0.0.1:8198/login', {
