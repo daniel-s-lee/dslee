@@ -60,7 +60,7 @@
   //authorizeAPI(3,"","");
 
   async function authorizeAPI(id, username, password) {
-    const response3 = await fetch('http://127.0.0.1:8199/authorize', {
+    const response3 = await fetch('http://127.0.0.1:8198/authorize', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -92,7 +92,7 @@
     })
 
     async function loginUser(username, password) {
-      const response = await fetch('http://127.0.0.1:8199/login', {
+      const response = await fetch('http://127.0.0.1:8198/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -103,7 +103,7 @@
       const data = await response.json();
       if (response.ok) {
         alert("You have successfully logged in.");
-        window.location.replace("/T2joshua/")
+        window.location.replace("/dslee/")
       } else if (response.status === 401) {
         loginErrorMsg.style.opacity = 1;
       } else if (response.status === 403) {
@@ -138,7 +138,7 @@
     signup(username, password)
   })
   async function signup(username, password) {
-    const response2 = await fetch('http://127.0.0.1:8199/signUp', {
+    const response2 = await fetch('http://127.0.0.1:8198/signUp', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
