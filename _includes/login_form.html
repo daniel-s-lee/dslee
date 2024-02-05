@@ -55,7 +55,7 @@
   //authorizeAPI(3,"","");
 
   async function authorizeAPI(id, username, password) {
-    const response3 = await fetch('http://127.0.0.1:8198/authorize', {
+    const response3 = await fetch('http://127.0.0.1:8199/api/users/authenticate', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -88,17 +88,19 @@
     });
 
     async function loginUser(username, password) {
-      const response = await fetch('http://127.0.0.1:8198/login', {
+      const response = await fetch('http://127.0.0.1:8199/api/users/authenticate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ "username":username, "password":password }),
+        body: JSON.stringify({ "uid":username, "password":password }),
       });
     
       const data = await response.json();
       if (response.ok) {
         alert("You have successfully logged in.");
+        // store the authenticatio token in session Storage or local storage
+        window.sessionStorage.setItem("authtoken", datajwt);
         window.location.replace("/dslee/")
       } else if (response.status === 401) {
         loginErrorMsg.style.opacity = 1;
@@ -134,25 +136,20 @@
     signup(username, password)
   })
   async function signup(username, password) {
-    const response2 = await fetch('http://127.0.0.1:8198/signUp', {
+    const response2 = await fetch('http://127.0.0.1:8199/api/users/authenticate', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ "username":username, "password":password }),
+      body: JSON.stringify({ "uid":username, "password":password }),
     });
   
     const data2 = await response2.json();
     if (response2.ok) {
       alert("You have successfully signUp.");
       modal.style.display = "none";
-      
-    } else if (response2.status === 401) {
-      alert("You have error signUp.");
-    } else if (response2.status === 403) {
-      alert("You have error signUp.");
-    } else if (response2.status === 404) {
-      alert("You have error signUp.");
-    }  
-  }  
+    } else {
+      alert("Error signing up.");
+    }
+  }
   </script>
